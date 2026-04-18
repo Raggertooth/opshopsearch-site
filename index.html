@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Op Shop Search - Discover Thrifted Treasures</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #FAF7F2;
+            --color-warm-white: #FEFCFA;
+            --color-charcoal: #2C2C2C;
+            --color-sage: #7A8B6E;
+            --color-terracotta: #C4A484;
+            --color-sand: #D4C5B5;
+            --color-overlay: rgba(44, 44, 44, 0.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-cream);
+            color: var(--color-charcoal);
+            line-height: 1.6;
+        }
+
+        /* Hero Section - Thrift Store Imagery */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(var(--color-overlay), var(--color-overlay)), 
+                        url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            color: var(--color-warm-white);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p .gold {
+            color: #FFD700;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #FFD700;
+            color: var(--color-charcoal);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            border-color: #FFD700;
+            color: #FFD700;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-charcoal);
+        }
+
+        .about p {
+            font-size: 1.15rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 3rem 2rem;
+            background-color: var(--color-warm-white);
+        }
+
+        .features h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            background-color: var(--color-cream);
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-sage), #5a6b4e);
+            color: var(--color-warm-white);
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-light {
+            background-color: var(--color-warm-white);
+            color: var(--color-sage);
+        }
+
+        .btn-light:hover {
+            background-color: transparent;
+            color: var(--color-warm-white);
+            border-color: var(--color-warm-white);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: var(--color-charcoal);
+            color: var(--color-warm-white);
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact a {
+            color: var(--color-terracotta);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                height: 90vh;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Thrifted Treasures</h1>
+            <p>Find unique second-hand gems in <span class="gold">Gold Coast</span> Op Shops<br>with our interactive map</p>
+            <a href="#app" class="btn">Explore the Map</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>What is Op Shop Finder?</h2>
+        <p>Op Shop Finder is your guide to discovering hidden treasures in Gold Coast's best Op Shops. We've mapped 40+ charity shops and secondhand stores, making it easy to find your next sustainable fashion find or vintage treasure.</p>
+        <p>Whether you're a thrifting enthusiast, vintage collector, or simply love a good bargain, our interactive map helps you plan your Op Shop adventures.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3>Interactive Map</h3>
+                <p>Browse all Gold Coast Op Shops on an interactive map with colour-coded pins</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Find Near You</h3>
+                <p>Use geolocation to find Op Shops closest to your current location</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Smart Search</h3>
+                <p>Search by suburb, shop name, or browse by charity organisation</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Friendly</h3>
+                <p>Fully responsive design works perfectly on your phone while you're out thrifting</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🕐</div>
+                <h3>Live Opening Hours</h3>
+                <p>Check if shops are open now, Saturday, or Sunday with real-time status</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h3>Favourites & Export</h3>
+                <p>Save your favourite Op Shops and export your list to CSV for thrifting trips</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="app">
+        <h2>Ready to Start Thrifting?</h2>
+        <p>Launch the Op Shop Finder and discover your next treasure today</p>
+        <a href="https://beta.opshopsearch.com" class="btn">Launch Op Shop Finder</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>Have feedback or want to add a shop to our map?</p>
+        <p><a href="mailto:contact@opshopsearch.com">contact@opshopsearch.com</a></p>
+        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.6;">© 2026 Op Shop Search. Celebrating sustainable fashion.</p>
+    </section>
+</body>
+</html>
