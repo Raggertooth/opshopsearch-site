@@ -1,9 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Op Shop Search - Discover Thrifted Treasures</title>
+    <title>Op Shop Search — Discover Thrifted Treasures on the Gold Coast</title>
+    <meta name="description" content="Discover Gold Coast op shops with Op Shop Search — an interactive map of 40+ charity and second-hand stores. Opening hours, charity filters, mobile-friendly.">
+    <meta name="author" content="Southern Claw Labs">
+    <meta name="theme-color" content="#FAF7F2">
+    <link rel="canonical" href="https://opshopsearch.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Op Shop Search — Discover Thrifted Treasures on the Gold Coast">
+    <meta property="og:description" content="Discover Gold Coast op shops — interactive map of 40+ charity and second-hand stores, opening hours, charity filters.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://opshopsearch.com/">
+    <meta property="og:locale" content="en_AU">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -34,7 +53,7 @@
         /* Hero Section - Thrift Store Imagery */
         .hero {
             height: 100vh;
-            background: linear-gradient(var(--color-overlay), var(--color-overlay)), 
+            background: linear-gradient(var(--color-overlay), var(--color-overlay)),
                         url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -218,12 +237,24 @@
             text-decoration: underline;
         }
 
+        .footer-meta {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        .footer-built {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
                 height: 90vh;
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
@@ -236,14 +267,14 @@
         <div class="hero-content">
             <h1>Discover Thrifted Treasures</h1>
             <p>Find unique second-hand gems in <span class="gold">Gold Coast</span> Op Shops<br>with our interactive map</p>
-            <a href="#app" class="btn">Explore the Map</a>
+            <a href="https://beta.opshopsearch.com" class="btn">Explore the Map</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about">
-        <h2>What is Op Shop Finder?</h2>
-        <p>Op Shop Finder is your guide to discovering hidden treasures in Gold Coast's best Op Shops. We've mapped 40+ charity shops and secondhand stores, making it easy to find your next sustainable fashion find or vintage treasure.</p>
+        <h2>What is Op Shop Search?</h2>
+        <p>Op Shop Search is your guide to discovering hidden treasures in Gold Coast's best Op Shops. We've mapped 40+ charity shops and secondhand stores, making it easy to find your next sustainable fashion find or vintage treasure.</p>
         <p>Whether you're a thrifting enthusiast, vintage collector, or simply love a good bargain, our interactive map helps you plan your Op Shop adventures.</p>
     </section>
 
@@ -285,10 +316,10 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" id="app">
+    <section class="cta">
         <h2>Ready to Start Thrifting?</h2>
-        <p>Launch the Op Shop Finder and discover your next treasure today</p>
-        <a href="https://beta.opshopsearch.com" class="btn">Launch Op Shop Finder</a>
+        <p>Launch Op Shop Search and discover your next treasure today</p>
+        <a href="https://beta.opshopsearch.com" class="btn">Launch Op Shop Search</a>
     </section>
 
     <!-- Contact Section -->
@@ -296,7 +327,8 @@
         <h2>Get in Touch</h2>
         <p>Have feedback or want to add a shop to our map?</p>
         <p><a href="mailto:contact@opshopsearch.com">contact@opshopsearch.com</a></p>
-        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.6;">© 2026 Op Shop Search. Celebrating sustainable fashion.</p>
+        <p class="footer-meta">© 2026 Op Shop Search · Celebrating sustainable fashion</p>
+        <p class="footer-built">Built by <a href="https://southernclawlabs.com">Southern Claw Labs</a></p>
     </section>
 </body>
 </html>
